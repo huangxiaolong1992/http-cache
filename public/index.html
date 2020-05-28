@@ -1,11 +1,163 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=http://minedata.cn/minemapapi/v2.0.0/minemap.css><script src=http://minedata.cn/minemapapi/v2.0.0/minemap.js></script><script src=http://minedata.cn/minemapapi/v2.0.0/plugins/turf/turf.min.js></script><title>manage</title><style type=text/css>html, body {
-      margin: 0;
-      padding: 0;
-      overflow: auto;
-    }
-    #app{
-      position: absolute;
-      width: 100%;
-      z-index: 2;
-      height: 100%;
-    }</style><link href=./static/css/app.e0b9a8ddd08a4f203ece0d6bbd18bf28.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.027e69a8760f1b9e4e03.js></script><script type=text/javascript src=./static/js/vendor.afd93915e38f278efa81.js></script><script type=text/javascript src=./static/js/app.0aea0931f7b1b01cad78.js></script></body></html>
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>微科技管理后台</title><link href=./static/css/app.8fabd20a22483c54433a870cce4a5181.css rel=stylesheet></head><body><div id=app></div><style type=text/css>.maskBrower{
+  			position: fixed;
+  			width: 100%;
+  			height: 100%;
+  			left: 0;
+  			top: 0;
+  			background: rgba(0,0,0,0.5);
+			}
+			.maskBrowerContent{
+				width: 800px;
+				height: 400px;
+				position: absolute;
+				z-index: 2;
+				left: 50%;
+				top: 50%;
+				margin-top: -300px;
+				margin-left: -400px;
+				background: #f6f6f6;
+				padding: 30px;
+				text-align: center;
+			}
+			.maskBrowerTitle{
+				margin-bottom: 50px;
+				font-weight: normal;
+				font-size: 30px;
+			}
+      .maskText{
+      	margin-bottom: 20px;
+      	font-size: 16px;
+      }
+      .allBrower{
+      	margin-top: 70px;
+      }
+      .threeBrower{
+      	float: left;
+      	width: 33.3%;
+      }
+
+      .threeBrower img{
+      	width: 50px;
+      }
+      .threeBrower a{
+      	margin-top: 5px;
+      	background-color: #ffffff;
+				padding: 4px 10px;
+				color: #4cb4e7;
+				background: white;
+				text-decoration:none;
+				font-size: 12px;
+				border:1px solid #4cb4e7;
+      }</style><script type=text/javascript>var browser = navigator.appName
+			var agent = navigator.userAgent.toLowerCase();
+			var b_version = navigator.appVersion;
+			var version = b_version.split(";");
+   
+      //火狐
+      if(agent.indexOf('firefox')!= -1){
+        if(agent.match(/firefox\/([\d.]+)/)[1].substring(0,2) <= 54){
+					render();
+				}
+      }
+			
+     
+    //ie
+     var trim_Version = version[1].replace(/[ ]/g,"");
+     if(browser=="Microsoft Internet Explorer" && (trim_Version=="MSIE7.0" || trim_Version=="MSIE8.0" || trim_Version=="MSIE9.0")){
+     		render();
+     }
+
+    
+     //谷歌
+     if((agent.match(/chrome\/([\d.]+)/)[1]).substring(0,2) <= 51){
+     		render()
+     }
+
+	   
+			function render()
+			{
+				var content = "<div class='maskBrower'>"+
+												"<div class='maskBrowerContent'>"+
+												  "<h1 class='maskBrowerTitle'>您的浏览器版本太低啦！</h1>"+
+												  "<div class='maskText'>为了使您能正常体验微科技的各项功能</div>"+
+												  "<div class='maskText'>我们建议您升级一下浏览器版本，或尝试更换其他浏览器</div>"+
+												  "<div class='browerDownload'>"+
+												  	"<p>点击下方下载高版本浏览器</p>"+
+												  	"<div class='allBrower clearfix'>"+
+												  	  "<div class='threeBrower'>"+
+											  			  "<img src='./static/chrome.png'>"+
+											  			  "<p class='browser32'>"+
+											  			    "<a href='http://218.17.105.178:20001/ga/wjs1/group1/M00/00/39/wKgydl1ntE-Ads7AA0qhAE4Pl8M297.exe?requestType=zuul' download='Chrome'>下载</a>"+
+											  			  "</p>"+
+											  			  "<p class='browser64'>"+
+											  			    "<a href='http://218.17.105.178:20001/ga/wjs1/group1/M00/00/39/wKgydl1ntE-Ads7AA0qhAE4Pl8M297.exe?requestType=zuul' download='Chrome'>下载</a>"+
+											  			  "</p>"+
+											  			"</div>"+
+											  		  "<div class='threeBrower'>"+
+											  			  "<img src='./static/firefox.png'>"+
+											  			  "<p class='browser32'>"+
+											  			    "<a href='http://218.17.105.178:20001/ga/wjs1/group1/M00/00/39/wKgydl1ntSaAIpc9AsWkUO9weE8234.exe?requestType=zuul' download='firefox'>下载</a>"+
+											  			  "</p>"+
+											  			  "<p class='browser64'>"+
+											  			    "<a href='http://218.17.105.178:20001/ga/wjs1/group1/M01/00/39/wKgydl1ntUyAQ4t6At00WLTU_Pw993.exe?requestType=zuul' download='firefox'>下载</a>"+
+											  			  "</p>"+
+											  			"</div>"+
+											  			"<div class='threeBrower'>"+
+											  			  "<img src='./static/ie.png'>"+
+											  			  "<p class='browser32'>"+
+											  			    "<a href='http://218.17.105.178:20001/ga/wjs1/group1/M00/00/39/wKgydl1ntE-Ads7AA0qhAE4Pl8M297.exe?requestType=zuul' download='ie64'>下载</a>"+
+											  			  "</p>"+
+											  			  "<p class='browser64'>"+
+											  			    "<a href='http://218.17.105.178:20001/ga/wjs1/group1/M03/00/39/wKgydl1ntOCAY6SOA5GDkD4FsEA886.EXE?requestType=zuul' download='ie64.EXE'>下载</a>"+
+											  			  "</p>"+
+											  			"</div>"+
+												  	"</div>"+
+												  "</div>"+
+												"</div>"+
+											"</div>"
+				var dom=document.createElement('div');
+				dom.id='wkjcontent';
+
+				document.body.appendChild(dom);
+				document.getElementById("wkjcontent").innerHTML = content ;
+				//电脑是32  还是64
+				computeNum()
+			}
+
+      function computeNum() {
+      	if (agent.indexOf("win64") >= 0 || agent.indexOf("wow64") >= 0) {
+       	  var tags = getClassNames("browser32");
+       	  for (var i = 0; i < tags.length; i++) {
+            getClassNames("browser32")[i].style.display ="none"
+          }
+		    }
+		    else {
+		      var tags = getClassNames("browser64");
+       	  for (var i = 0; i < tags.length; i++) {
+            getClassNames("browser32")[i].style.display ="none"
+          }
+		    }
+      }
+
+      function getClassNames(className){
+		    if (document.getElementsByClassName) {
+		      return document.getElementsByClassName(className)
+		    }else {
+	        var nodes = document.getElementsByTagName('*'),ret = [];
+	        for(i = 0; i < nodes.length; i++) {
+            if(hasClass(nodes[i],className)){
+              ret.push(nodes[i])
+            }
+	        }
+	        return ret;
+		    }
+		  }
+	    function hasClass(tagStr,className){
+	      var arr=tagStr.className.split(/\s+/ );  //这个正则表达式是因为class可以有多个,判断是否包含
+	      for (var i=0;i<arr.length;i++){
+	        if (arr[i]==className){
+	            return true ;
+	        }
+	      }
+	      return false ;
+      }</script><script type=text/javascript src=./static/js/manifest.793f17cf6796b27ff8ed.js></script><script type=text/javascript src=./static/js/vendor.fe8ec88db2e745f6f67c.js></script><script type=text/javascript src=./static/js/app.9fbc8491d48b1251eade.js></script></body></html>
